@@ -19,12 +19,12 @@ import { useParams } from 'next/navigation';
 export default function UserProfile() {
     const { user, setUser } = useUser();
     const params = useParams();
-    /* @ts-ignore */
+  
     const profileId = params?.profileId as string;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const [activeModal, setActiveModal] = useState<string | null>(null);
-    // const [process, setProcess] = useState(0); // Removed state: Derived from progressData now
+  
     const menuModalRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
     const [loading, setLoading] = useState(false);
