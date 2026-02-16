@@ -246,12 +246,12 @@ export default function UserProfile() {
                             </div>
                         </div>
                     ) : (
-                        <div className='flex justify-between items-center w-full '>
+                        <div className='flex flex-col md:flex-row justify-between items-center w-full '>
                             <div className='max-w-[420px]'>
                                 <h3 className='text-lg font-semibold '>Tell us where you want to go</h3>
                                 <p className='text-sm text-gray-400'>Add your career goals and what inspires you. This helps us tailor recommendations, learning paths, and opportunities just for you.</p>
                             </div>
-                            <button onClick={() => { setUpdateId(undefined); setActiveModal('career') }} className='bg-black text-white rounded-lg px-4 py-2 h-[40px]' >✨ Add your career goals</button>
+                            <button onClick={() => { setUpdateId(undefined); setActiveModal('career') }} className='bg-black text-white rounded-lg px-4 py-2 h-[40px] dark:bg-gray-700 dark:hover:bg-gray-600 ' >✨ Add your career goals</button>
                         </div>
                     )}
                 </div>
@@ -273,7 +273,7 @@ export default function UserProfile() {
                                 {
                                     progressData.map((item, index) => (
                                         !item.show && (
-                                            <div className='flex justify-between p-[15px]  bg-[#F6F7F9] rounded-md  w-full items-center '>
+                                            <div className='flex justify-between p-[15px]  bg-[#F6F7F9] rounded-md  w-full items-center dark:bg-gray-700 dark:text-gray-200 ' key={index}>
                                                 <div className='flex flex-col'>
                                                     <h6 className='text-xs font-semibold'>{item.task}  <span className='text-green-400'> (+{item.process}%)</span></h6>
                                                     <p className='text-xs'>{item.desc}</p>
