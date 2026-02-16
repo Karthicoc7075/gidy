@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+###Gidy Profile Page Replica###
 
-## Getting Started
+This project is a full-stack replica of the Gidy.ai profile page built using Next.js, MongoDB, and Azure Blob Storage. It allows users to create and manage a professional profile including personal details, education, skills, certifications, experience, and career vision.
 
-First, run the development server:
+##Live Demo##
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+👉 https://gidy.vercel.app
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##Tech Stack##
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#Frontend:# Next.js 16, TypeScript, Tailwind CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#Backend:# Next.js API Routes (Node.js)
 
-## Learn More
+Database:# MongoDB (Mongoose)
 
-To learn more about Next.js, take a look at the following resources:
+#File Storage:# Azure Blob Storage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#Authentication:# JWT (HTTP-only cookies)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#AI Integration:# OpenAI API
 
-## Deploy on Vercel
+##Features##
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+User authentication and onboarding
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Profile management with multiple sections
+
+Resume and profile image upload (Azure Blob)
+
+Skills, education, certifications, experience
+
+Career vision module
+
+##Innovative Features##
+
+To enhance the user profile experience beyond a static replica, I implemented two product-focused innovations:
+
+#1. AI Smart Bio Generator#
+
+Users can automatically generate a professional profile bio using AI based on their skills, career goals, and experience. This reduces the effort required to write a compelling summary and helps users present themselves professionally. The generated bio can be edited and saved, ensuring personalization and accuracy.
+
+#2. Dark Mode with Persistent Preference#
+
+The application includes a dark mode theme toggle that improves visual comfort and accessibility. The selected theme is stored locally, ensuring the user’s preference persists across sessions and page reloads. This enhances usability and modernizes the overall user experience.
