@@ -9,14 +9,15 @@ const openai = new OpenAI({
 });
 
 export async function POST(req: NextRequest) {
-  await connectDB();
 
   const userId = getUserId(req);
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const user = await User.findById(userId);
+  try{
+  await connectDB();
+    const user = await User.findById(userId);
 
   const prompt = `
 You are a professional bio writer. Create a compelling, professional bio (2-3 sentences, ~50-75 words) that sounds natural and engaging.
@@ -57,4 +58,9 @@ Write only the bio text, no explanations or meta-commentary.
   User.findByIdAndUpdate(userId, { bio }, { new: true }).exec();
 
   return NextResponse.json(bio);
+  }
+  catch (error) {
+    console.error("Error generating bio:", error);
+    return NextResponse.json({ error: "Failed to generate bio" }, { status: 500 });
+  }
 }
