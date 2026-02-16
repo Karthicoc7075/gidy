@@ -123,7 +123,7 @@ function Navbar() {
           </button>
           <div className=' flex justify-center items-center w-[30px] h-[30px] rounded-full bg-blue-400 text-white'>K</div>
           <button ref={buttonRef} onClick={handleModalClick} className='flex justify-center items-center pb-[4px] dark:text-gray-300'>
-            <svg className='dark:text-gray-300'  width="24" height="24" viewBox="0 0 24 24 ">
+            <svg className='dark:text-gray-100' fill={'currentColor'}  width="24" height="24" viewBox="0 0 24 24 ">
               <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
             </svg>
 

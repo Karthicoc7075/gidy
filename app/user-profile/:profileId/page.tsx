@@ -122,7 +122,7 @@ export default function UserProfile() {
 
                     <div className='flex' >
                         <div className='border border-dashed border-gray-300 rounded-full p-[2px] '>
-                            <img className='w-[50px] h-[50px] rounded-full' src={user?.profilePictureUrl || "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"} alt="" />
+                            <img className='w-[50px] h-[50px] rounded-full' src={user?.profilePictureUrl || "/assets/images/default-profile.png"} alt="" />
                         </div>
                         <div className='flex flex-1 justify-between items-center gap-[15px] py-[8px] px-[12px] pr-0  '>
                             <div className='flex items-center gap-[8px]'>
@@ -148,7 +148,7 @@ export default function UserProfile() {
                                 <button ref={buttonRef} onClick={() => setIsMenuOpen(!isMenuOpen)} className='p-[4px] rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 '  >
                                     <svg className='text-gray-400' stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1.6rem" width="1.6rem" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
                                 </button>
-                                {isMenuOpen && (<div ref={menuModalRef} className='absolute  top-[30px] p-[2px] mt-[1rem] right:0 md:-right-24 bg-white shadow-lg rounded-md border-2  border-gray-200 w-[124px] dark:bg-gray-800 dark:border-gray-700  dark:text-gray-200 z-10'>
+                                {isMenuOpen && (<div ref={menuModalRef} className='absolute  top-[30px] p-[2px] mt-[1rem] right-3 md:-right-6 lg:-right-8 bg-white shadow-lg rounded-md border-2  border-gray-200 w-[124px] dark:bg-gray-800 dark:border-gray-700  dark:text-gray-200 z-10'>
                                     <div onClick={() => setActiveModal('bio')} className='flex  items-center gap-[4px] px-[10px] py-[8px] rounded-md  text-xs text-gray-600  hover:bg-blue-50 cursor-pointer dark:text-gray-300 dark:hover:bg-gray-700 '>
 
                                         <svg  className='text-blue-600 dark:text-gray-200' stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h274.9c-2.4-6.8-3.4-14-2.6-21.3l6.8-60.9 1.2-11.1 7.9-7.9 77.3-77.3c-24.5-27.7-60-45.5-99.9-45.5zm45.3 145.3l-6.8 61c-1.1 10.2 7.5 18.8 17.6 17.6l60.9-6.8 137.9-137.9-71.7-71.7-137.9 137.8zM633 268.9L595.1 231c-9.3-9.3-24.5-9.3-33.8 0l-37.8 37.8-4.1 4.1 71.8 71.7 41.8-41.8c9.3-9.4 9.3-24.5 0-33.9z"></path></svg>
@@ -251,7 +251,7 @@ export default function UserProfile() {
                                 <h3 className='text-lg font-semibold '>Tell us where you want to go</h3>
                                 <p className='text-sm text-gray-400'>Add your career goals and what inspires you. This helps us tailor recommendations, learning paths, and opportunities just for you.</p>
                             </div>
-                            <button onClick={() => { setUpdateId(undefined); setActiveModal('career') }} className='bg-black text-white rounded-lg px-4 py-2 h-[40px] dark:bg-gray-700 dark:hover:bg-gray-600 ' >✨ Add your career goals</button>
+                            <button onClick={() => { setUpdateId(undefined); setActiveModal('career') }} className='bg-black text-white rounded-lg mt-2 md:mt-0 px-4 py-2 h-[40px] dark:bg-gray-700 dark:hover:bg-gray-600 ' >✨ Add your career goals</button>
                         </div>
                     )}
                 </div>
@@ -343,7 +343,7 @@ export default function UserProfile() {
 
                                         </div>
                                     ))) : (
-                                    <p className='text-xs texuuuytgf. ghj t-center'>✍️ Add Your Experiences!</p>
+                                    <p className='text-xs text-center'>✍️ Add Your Experiences!</p>
                                 )
 
                             }

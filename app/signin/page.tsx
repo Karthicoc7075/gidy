@@ -43,6 +43,7 @@ export default function Login() {
         alert(data.error || "Failed to log in. Please try again.");
         return;
       }
+      
 
       setUser(data.data);
       alert("Logged in successfully!");

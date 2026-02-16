@@ -48,11 +48,13 @@ export default function CreateAccount() {
 
     try {
       const res = await axios.post("/api/auth/signup", { email, password });
+
+
       setUser(res.data.data);
       window.location.href = "/onboarding";
     } catch (err) {
       console.error("Signup error:", err);
-      alert("Failed to create account. Please try again.");
+      alert( "Failed to create account. Please try again or already have an account? Sign in.");
     }
   };
 

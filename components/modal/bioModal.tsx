@@ -21,6 +21,7 @@ export default function BioModal({ onClose }: BioModalProps) {
     const [resume, setResume] = useState<File | null>(null);
     const [error, setError] = useState<Record<string, string>>({});
     const [loading, setLoading] = useState(false);
+    const [imagePreview, setImagePreview] = useState<string | null>(null);
 
     useEffect(() => {
         if (user) {
@@ -29,7 +30,7 @@ export default function BioModal({ onClose }: BioModalProps) {
             setEmail(user.email || '');
             setLocation(user.location || '');
             setBio(user.bio || '');
-            setProfilePicture(user.profilePictureUrl ? profilePicture : null);
+            setImagePreview(user.profilePictureUrl || null);
         }
     }
         , [user]);
@@ -50,7 +51,7 @@ export default function BioModal({ onClose }: BioModalProps) {
         formData.append('lastName', lastName);
         formData.append('location', location);
         formData.append('bio', bio);
-        if (profilePicture) formData.append('profilePicture', profilePicture);
+        if (profilePicture) formData.append('image', profilePicture);
         if (resume) formData.append('file', resume);
 
         try {
@@ -83,14 +84,18 @@ export default function BioModal({ onClose }: BioModalProps) {
             setProfilePicture(e.target.files[0]);
         }
     }
-
+console.log('Current user data in BioModal:', profilePicture);
     return (
         <Modal isOpen={true} onClose={onClose} >
             <div className='px-2'>
                 <div className='flex flex-col items-center justify-center  '>
                     <div className='relative '>
                         <input type='file' accept='image/*' onChange={handleProfilePictureUpload} className='absolute inset-0 opacity-0 cursor-pointer w-full h-full z-10' />
-                        <img src={profilePicture ? URL.createObjectURL(profilePicture) : 'https://d2d0jobwzy0nc3.cloudfront.net/static/UserProfile_MaleIcon'} alt='Profile' className='w-[100px] h-[100px] rounded-full border border-blue-400' />
+                        <img src={
+    imagePreview || 
+    (profilePicture instanceof File ? URL.createObjectURL(profilePicture) : profilePicture) || 
+    'https://d2d0jobwzy0nc3.cloudfront.net/static/UserProfile_MaleIcon'
+  }  alt='Profile' className='w-[100px] h-[100px] rounded-full border border-blue-400' />
                         <div className='w-[20px] h-[20px] rounded-full bg-blue-400 flex items-center justify-center absolute bottom-[8px] right-[8px]' >
                             <svg className='text-white' width={'10px'} height={'10px'} fill='currentColor' focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EditIcon" ><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75z"></path></svg>
                         </div>
